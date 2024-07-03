@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/KellyCriterionGame/static/css/main.281a9a5f.css",
+    "main.js": "/KellyCriterionGame/static/js/main.a740a02f.js",
+    "index.html": "/KellyCriterionGame/index.html",
+    "main.281a9a5f.css.map": "/KellyCriterionGame/static/css/main.281a9a5f.css.map",
+    "main.a740a02f.js.map": "/KellyCriterionGame/static/js/main.a740a02f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.281a9a5f.css",
+    "static/js/main.a740a02f.js"
+  ]
+}
