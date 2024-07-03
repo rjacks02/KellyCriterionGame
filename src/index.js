@@ -9,7 +9,7 @@ import styles from './styles.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-      <h1 class = 'Main'>The Updated Kelly Criterion Investment Game</h1>
+      <h1 class = 'Main'>The Kelly Criterion Investment Game</h1>
     <HashRouter>
     <Routes>
       <Route index element={<Intro />} />
