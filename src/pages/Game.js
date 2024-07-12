@@ -63,7 +63,7 @@ const Game = () => {
                 navigate('/End', {state: {finalCapital: 0, count: count, percentage: percentage, turns: total, gameData: data, lastPercentage: wagerPercentage}});
             }
             else if (newCapital >= 1000){
-                navigate('/End', {state: {finalCapital: newCapital, count: count, percentage: percentage, turns: total, gameData: data, lastPercentage: wagerPercentage}});
+                navigate('/End', {state: {finalCapital: 1000, count: count, percentage: percentage, turns: total, gameData: data, lastPercentage: wagerPercentage}});
             }
             else if (count >= total){
                 navigate('/End', {state: {finalCapital: newCapital, count: count, percentage: percentage, turns: total, gameData: data, lastPercentage: wagerPercentage}});
