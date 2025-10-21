@@ -1,9 +1,12 @@
+html {
+    margin: 0;
+    overflow-x: hidden;
+}
+
 .Main {
     align-content: center;
 
     background-color: #98FB98;
-    box-shadow: 0 0 0 100vmax #98FB98;
-    clip-path: inset(0 -100vmax); 
 
     font-size: 300%;
     font-family: Serif;
