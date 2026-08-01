@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/KellyCriterionGame/static/css/main.fd1c4d16.css",
-    "main.js": "/KellyCriterionGame/static/js/main.68f864bc.js",
+    "main.css": "/KellyCriterionGame/static/css/main.8247b48d.css",
+    "main.js": "/KellyCriterionGame/static/js/main.4d712376.js",
     "index.html": "/KellyCriterionGame/index.html",
-    "main.fd1c4d16.css.map": "/KellyCriterionGame/static/css/main.fd1c4d16.css.map",
-    "main.68f864bc.js.map": "/KellyCriterionGame/static/js/main.68f864bc.js.map"
+    "main.8247b48d.css.map": "/KellyCriterionGame/static/css/main.8247b48d.css.map",
+    "main.4d712376.js.map": "/KellyCriterionGame/static/js/main.4d712376.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd1c4d16.css",
-    "static/js/main.68f864bc.js"
+    "static/css/main.8247b48d.css",
+    "static/js/main.4d712376.js"
   ]
 }
