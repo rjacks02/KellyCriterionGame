@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
-import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Game = () => {
     const location = useLocation();
@@ -21,6 +20,9 @@ const Game = () => {
     function handleWagerChange(event) {
         const newPercentage = event.target.value
         setWagerPercentage(newPercentage);
+        if (newPercentage >= 0 && newPercentage <= 100){
+            setError('');
+        }
         let money = parseFloat(capital) * parseFloat(newPercentage) / 100;
         money = parseFloat(money.toFixed(2));
         if (isNaN(money)){
@@ -34,6 +36,7 @@ const Game = () => {
             setError('Your wager must be between 0 and 100 inclusive. Fix above before continuing.')
         }
         else{
+            setError('');
             const flip = Math.random();
             let newCapital = 0;
 
@@ -73,20 +76,20 @@ const Game = () => {
 
     return(
     <div>
-        <h1 class='Header'>Game {count}</h1>
-        <p class = 'Label'>You Have Up To {total-count+1} Coin Flips Remaining!</p>
-        <p class = 'Container'> <span class = 'Capital'>Current Capital = ${capital} </span></p>
-        <div class = 'Label'>
+        <h1 className='Header'>Game {count}</h1>
+        <p className='Label'>You Have Up To {total-count+1} Coin Flips Remaining!</p>
+        <p className='Container'> <span className='Capital'>Current Capital = ${capital} </span></p>
+        <div className='Label'>
             <label >Wager:    </label>
             <input onChange={handleWagerChange} onKeyDown = {blockInvalidChar} type="number" defaultValue="0" step = "1" min = "0" max = "100"/>
             <label >%</label>
             <p>You Will Be Wagering ${wagerTotal.toFixed(2)}</p>
         </div>
-        <div class='Container'>
-            <button class='Button' onClick={runFlip}><span>Flip The Coin!</span></button>
+        <div className='Container'>
+            <button className='Button' onClick={runFlip}><span>Flip The Coin!</span></button>
         </div>
-        <p class = 'Error'><mark>{error}</mark></p>
-        <p class = 'Label'>{message}</p>
+        <p className='Error'><mark>{error}</mark></p>
+        <p className='Label'>{message}</p>
     </div>
     );
   };

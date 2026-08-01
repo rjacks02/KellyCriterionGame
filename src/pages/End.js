@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const End = () => {
     const location = useLocation();
@@ -39,14 +38,14 @@ const End = () => {
 
     return(
     <div>
-        <h1 class = 'Header'>End of Game</h1>
-        <p class = 'Label'>Your Final Capital After {count} Flips:</p>
-        <div class = 'Container'>
-            < p class = 'Capital'>${capital.toFixed(2)}</p>
+        <h1 className='Header'>End of Game</h1>
+        <p className='Label'>Your Final Capital After {count} Flips:</p>
+        <div className='Container'>
+            <p className='Capital'>${capital.toFixed(2)}</p>
         </div>
-        <div class = 'Container'>
-            <button class = 'Button' onClick = {submitForm}><span>Share Data?</span></button>
-            <button class = 'Button' onClick = {playAgain}><span>Play Again?</span></button>
+        <div className='Container'>
+            <button className='Button' onClick = {submitForm}><span>Share Data?</span></button>
+            <button className='Button' onClick = {playAgain}><span>Play Again?</span></button>
         </div>
     </div>
     );

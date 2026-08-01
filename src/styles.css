@@ -1,43 +1,123 @@
+:root {
+    --color-primary: #1b9c6f;
+    --color-primary-dark: #147a57;
+    --color-primary-light: #e6f7f0;
+    --color-error: #d64550;
+    --color-error-bg: #fdecec;
+    --color-text: #1f2a24;
+    --color-text-muted: #5b6b63;
+    --color-bg: #f3f7f5;
+    --color-surface: #ffffff;
+    --color-border: #dde5e1;
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --shadow-md: 0 6px 20px rgba(20, 40, 30, 0.08);
+    --shadow-sm: 0 2px 8px rgba(20, 40, 30, 0.06);
+    --font-heading: 'Poppins', 'Segoe UI', sans-serif;
+    --font-body: 'Inter', 'Segoe UI', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 html {
     margin: 0;
     overflow-x: hidden;
+    background-color: var(--color-bg);
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-text);
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.Content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .Main {
     align-content: center;
 
-    background-color: #98FB98;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: #ffffff;
 
-    font-size: 300%;
-    font-family: Serif;
     text-align: center;
 
-    border-bottom-color: black;
-    border-bottom-style: solid;
-    border-bottom-width: thick;
+    box-shadow: var(--shadow-md);
 
-    padding: 1em;
-    margin: 0 -1em;
-    margin-top: -.5em;
+    padding: 0.75em 1em;
+    margin: 0 0 1em;
+}
+
+.Main h1 {
+    font-size: 230%;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin: 0;
+}
+
+.Main .Subtitle {
+    font-size: 90%;
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0.4em 0 0;
 }
 
 .Intro {
     align-content: center;
 
-    font-size: 120%;
-    font-family: Serif;
-    text-align: center;
+    max-width: 1040px;
+    margin: 0 auto 1em;
+    padding: 1.25em 2.25em;
 
-    border-bottom-color: black;
-    border-bottom-style: dashed;
-    border-bottom-width: medium;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+
+    font-size: 100%;
+    font-family: var(--font-body);
+    line-height: 1.5;
+    text-align: left;
+}
+
+.IntroText {
+    column-count: 2;
+    column-gap: 2.5em;
+    column-rule: 1px solid var(--color-border);
+}
+
+.IntroText p {
+    margin: 0 0 0.85em;
+    break-inside: avoid;
+}
+
+.IntroText p:last-child {
+    margin-bottom: 0;
 }
 
 .Label {
     align-content: center;
 
-    font-size: 120%;
-    font-family: Serif;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1em;
+
+    font-size: 108%;
+    font-family: var(--font-body);
     text-align: center;
 }
 
@@ -45,38 +125,85 @@ html {
     align-content: center;
 
     font-size: 150%;
-    font-family: Serif;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-primary-dark);
     text-align: center;
+    margin: 0.75em 0 0.4em;
 }
 
 .Error {
     align-content: center;
 
-    font-size: 120%;
-    font-family: Serif;
+    font-size: 105%;
+    font-family: var(--font-body);
     text-align: center;
-
-    text-decoration: underline;
-    text-underline-position: under;
 }
 
 mark {
-    background-color: #ff9a98;
-    color: black;
+    background-color: var(--color-error-bg);
+    color: var(--color-error);
+    border: 1px solid #f6c9cc;
+    border-radius: var(--radius-sm);
+    padding: 0.5em 1em;
+    display: inline-block;
+}
+
+mark:empty {
+    display: none;
+}
+
+label {
+    font-family: var(--font-body);
+    color: var(--color-text-muted);
+}
+
+input[type="number"] {
+    font-family: var(--font-body);
+    font-size: 1em;
+    padding: 0.5em 0.75em;
+    margin: 0.25em 0.5em;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 6em;
+}
+
+input[type="number"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
 }
 
 .Button {
     align-self: center;
 
-    background-color: #04AA6D;
+    background-color: var(--color-primary);
     border: none;
+    border-radius: var(--radius-sm);
     color: white;
     padding: 15px 32px;
     text-align: center;
     font-size: 16px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
 
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
   }
+
+.Button:hover {
+    background-color: var(--color-primary-dark);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.Button:active {
+    transform: translateY(0);
+}
 
 .Button span {
     cursor: pointer;
@@ -84,7 +211,7 @@ mark {
     position: relative;
     transition: 0.5s;
   }
-  
+
 .Button span:after {
     content: '\00bb';
     position: absolute;
@@ -93,30 +220,70 @@ mark {
     right: -20px;
     transition: 0.5s;
   }
-  
+
 .Button:hover span {
     padding-right: 25px;
   }
-  
+
 .Button:hover span:after {
     opacity: 1;
     right: 0;
   }
 
-.Container {  
+.Container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}  
+    gap: 1em;
+    margin: 0.75em auto;
+}
 
 .Capital {
     align-content: center;
 
-    font-size: 120%;
-    font-family: Serif;
+    font-size: 130%;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-primary-dark);
     text-align: center;
 
-    border-width: thick;
-    border-style: double;
+    background-color: var(--color-primary-light);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-md);
     padding: 15px 32px;
+}
+
+@media (max-width: 600px) {
+    .Main {
+        padding: 0.85em;
+    }
+
+    .Main h1 {
+        font-size: 170%;
+    }
+
+    .Main .Subtitle {
+        font-size: 80%;
+    }
+
+    .Intro {
+        margin: 0 1em 1.5em;
+        padding: 1.25em 1.5em;
+        font-size: 100%;
+    }
+
+    .IntroText {
+        column-count: 1;
+        column-rule: none;
+    }
+
+    .Label {
+        padding: 0 0.5em;
+    }
+
+    .Button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
 }
